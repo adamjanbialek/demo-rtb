@@ -1,0 +1,75 @@
+@import "fonts.css";
+@import "base.css";
+
+/* task 2 */
+.banner {
+  width: 160px;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.slider-container {
+  width: 160px;
+  height: 526px;
+  position: relative;
+}
+
+.slider-item {
+  box-sizing: border-box;
+  border: 1px solid #d9d9d9;
+  padding: 16px 6px 18px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: .3s all ease-in-out;
+}
+
+.slider-item .img-container {
+  height: 210px;
+}
+
+.slider-item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-item .name {
+  font-size: 16px;
+  font-family: "Rubik Regular", sans-serif;
+}
+
+.price {
+  font-family: "Rubik Bold", sans-serif;
+}
+
+.price + a .btn-cta {
+  margin-top: 38px;
+}
+
+.btn-cta {
+  background-color: #ef4136;
+  color: #f3eeed;
+  border: none;
+  padding: 10px 32px;
+}
+
+.img-container.logo {
+  display: flex;
+  justify-content: center;
+  height: 74px;
+  width: 100%;
+}
+
+.img-container.logo img {
+  margin-top: 26px;
+  width: 140px;
+  height: 17px;
+  object-fit: contain;
+}

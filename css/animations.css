@@ -1,0 +1,83 @@
+@keyframes slideToViewVertical {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideOutOfViewVertical {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideToViewHorizontal {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideToViewFromRightHorizontal {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOutOfViewHorizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);;
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes revealSliderPaginator {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: translate(-200px, calc(300px - 50%));
+  }
+  50% {
+    transform: translate(0, calc(300px - 50%));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
