@@ -1,7 +1,6 @@
 const sliderContainer = document.querySelector('.slider-container');
 const prices = document.querySelector('.prices');
-const countries = document.querySelector('.countries');
-const cities = document.querySelector('.cities');
+const countryCity = document.querySelector('.country-city-container');
 
 fetch('https://rekrutacja.webdeveloper.rtbhouse.net/files/banner_vip.json')
   .then(res => res.json(), err => alert(err))
@@ -22,11 +21,11 @@ function fillWithContent(content) {
        <p class="price">${content[i]?.price} ${content[i]?.currency}</p>
       </div>
     `);
-    countries.insertAdjacentHTML('beforeend', `
-       <p class="country"><span class="country-name">${content[i]?.country}</span></p>
-    `);
-    cities.insertAdjacentHTML('beforeend', `
-       <h1 class="city flybee-bg"><span class="city-name">${content[i]?.city}</span></h1>
+    countryCity.insertAdjacentHTML('beforeend', `
+       <div class="country-city-subcontainer">
+        <p class="country"><span class="country-name">${content[i]?.country}</span></p>
+        <h1 class="city flybee-bg"><span class="city-name">${content[i]?.city}</span></h1>
+       </div>
     `);
   }
 }
@@ -36,7 +35,7 @@ function prepareSlider() {
   const slides = Array.from(document.querySelectorAll('.slider-container .slider-item'));
   const slidesImages = Array.from(document.querySelectorAll('.slider-container .slider-item img'));
   const priceContainers = Array.from(document.querySelectorAll('.prices .price-container'));
-  const cities = Array.from(document.querySelectorAll('.city'));
+  const countryCity = Array.from(document.querySelectorAll('.city'));
   const cityHeadings = Array.from(document.querySelectorAll('.city-name'));
   const countries = Array.from(document.querySelectorAll('.country'));
   const countryHeadings = Array.from(document.querySelectorAll('.country-name'));
@@ -67,7 +66,7 @@ function prepareSlider() {
     squaresContainer[0].style.animation = `revealSliderPaginator 0.2s ${extendedDelay + 's'} forwards`;
     countries[curSlide].style.animation = `slideToViewHorizontal 0.25s ${extendedDelay + .5}s ease-out forwards`;
     countryHeadings[curSlide].style.animation = `slideToViewVertical 0.25s ${extendedDelay + .75}s ease-out forwards`;
-    cities[curSlide].style.animation = `slideToViewHorizontal 0.25s ${extendedDelay + .75}s ease-out forwards`;
+    countryCity[curSlide].style.animation = `slideToViewHorizontal 0.25s ${extendedDelay + .75}s ease-out forwards`;
     cityHeadings[curSlide].style.animation = `slideToViewVertical 0.25s ${extendedDelay + 1}s ease-out forwards`;
     priceContainers[curSlide].style.animation = `slideToViewVertical .4s ${extendedDelay + 1}s forwards`;
 
@@ -77,7 +76,7 @@ function prepareSlider() {
       priceContainers[curSlide - 1].style.animation = 'slideOutOfViewVertical 0.2s forwards';
       countries[curSlide - 1].style.animation = 'slideOutOfViewHorizontal 0.25s ease-in forwards';
       countryHeadings[curSlide - 1].style.animation = 'slideOutOfViewVertical 0.15s ease-in forwards';
-      cities[curSlide - 1].style.animation = 'slideOutOfViewHorizontal 0.5s ease-in forwards';
+      countryCity[curSlide - 1].style.animation = 'slideOutOfViewHorizontal 0.5s ease-in forwards';
       cityHeadings[curSlide - 1].style.animation = 'slideOutOfViewVertical 0.1s ease-in forwards';
     }
 

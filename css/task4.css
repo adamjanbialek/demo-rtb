@@ -86,19 +86,18 @@
   overflow: hidden;
 }
 
-.countries {
-  height: 18px;
-  position: relative;
-}
-
 .info-container .country {
   padding: 3px 6px 0 12px;
   width: fit-content;
   font-size: 15px;
   background-color: #ffffff;
   font-family: "Rubik Regular", sans-serif;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
+}
+
+.country-city-subcontainer {
   position: absolute;
+  width: 100%;
 }
 
 .country {
@@ -110,24 +109,26 @@
   transform: translateY(115%);
 }
 
-.cities {
-  height: 58px;
+.country-city-container {
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  height: 200px;
 }
 
 .city-name {
   display: block;
   transform: translateY(115%);
+  word-wrap: break-word;
 }
 
 .info-container .city {
-  position: absolute;
   padding: 6px 15px 7px;
-  width: fit-content;
   font-size: 45px;
   font-family: "Rubik Regular", sans-serif;
   transform: translateX(-100%);
+  overflow: hidden;
 }
 
 .info-container + .prices {
@@ -164,7 +165,6 @@
 
 .btn-container {
   position: relative;
-  /*overflow: hidden;*/
 }
 
 .line {
