@@ -60,8 +60,11 @@ function prepareSlider() {
   function slide() {
     slides[curSlide].style.transform = `translateX(0%)`;
 
+
+    /* extended delay needed for the first slide  */
     const extendedDelay = curSlide === 0 ? 1.5 : 0;
 
+    /* starting animations for every slide */
     slidesImages[curSlide].style.animation = `zoomIn 5s ${extendedDelay + 's'} linear forwards`;
     squaresContainer[0].style.animation = `revealSliderPaginator 0.2s ${extendedDelay + 's'} forwards`;
     countries[curSlide].style.animation = `slideToViewHorizontal 0.25s ${extendedDelay + .5}s ease-out forwards`;
@@ -72,6 +75,7 @@ function prepareSlider() {
 
     const activeCardNo = parseInt(document.querySelector('.slider-item--active')?.getAttribute('data-offer'));
 
+    /* last animations for every slide */
     function hideElements() {
       priceContainers[curSlide - 1].style.animation = 'slideOutOfViewVertical 0.2s forwards';
       countries[curSlide - 1].style.animation = 'slideOutOfViewHorizontal 0.25s ease-in forwards';
@@ -95,6 +99,8 @@ function prepareSlider() {
     (activeCardNo + 1) > sliderLength ? clearInterval(myInterval) : slides[activeCardNo + 1].classList.add('slider-item--active');
 
     curSlide++;
+
+    //when it is the last execution of the function
     curSlide === sliderLength + 1 ? setTimeout(() => {
       hideElements();
       banner.style.animation = 'fadeOut .5s forwards';

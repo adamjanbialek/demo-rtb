@@ -2,6 +2,15 @@
 @import "base.css";
 
 /* task 2 */
+body {
+  display: flex;
+  min-height: 700px;
+  height: 100vh;
+  max-height: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner {
   width: 160px;
   overflow: hidden;
@@ -30,8 +39,17 @@
   transition: .3s all ease-in-out;
 }
 
-.slider-item .img-container {
+.close {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  height: 12px;
+  width: 12px;
+}
+
+.slider-item .photo {
   height: 210px;
+  margin-top: 6px;
 }
 
 .slider-item img {
@@ -41,12 +59,13 @@
 }
 
 .slider-item .name {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Rubik Regular", sans-serif;
 }
 
 .price {
-  font-family: "Rubik Bold", sans-serif;
+  font-size: 17px;
+  font-family: "Hind Bold", sans-serif;
 }
 
 .price + a .btn-cta {
@@ -58,6 +77,12 @@
   color: #f3eeed;
   border: none;
   padding: 10px 32px;
+  cursor: pointer;
+  transition: .3s all ease-in;
+}
+
+.btn-cta:hover {
+  background-color: black;
 }
 
 .img-container.logo {

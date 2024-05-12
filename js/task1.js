@@ -22,6 +22,8 @@ function fillWithContent(content) {
   }
 }
 
+
+/* actual number of active card stored in a variable(needed when user hovers over a card and then leaves)*/
 let realActiveCardNo = null;
 
 function jumpAnimation() {
@@ -32,7 +34,8 @@ function jumpAnimation() {
   cardsContainer.addEventListener('mouseover', function (e) {
     clearInterval(animationInterval);
     realActiveCardNo = realActiveCardNo ? realActiveCardNo : parseInt(document.querySelector('.card--active').getAttribute('data-card'));
-    console.log('el'+ realActiveCardNo);
+
+    /* used closest() instead of addEventListener() because it's more efficient behind the secenes */
     const cardHover = e.target.closest('.card');
     if(!cardHover) return;
     const activeCardNo = parseInt(document.querySelector('.card--active').getAttribute('data-card'));

@@ -2,7 +2,7 @@ const counter = document.getElementById('counter');
 
 let endCountdownDate;
 
-const daysRemaining = 7 - new Date().getDay();
+const daysRemaining = (7 - new Date().getDay()) === 7 ? 0 : (7 - new Date().getDay());
 const thisSunday = new Date().getDate() + daysRemaining;
 
 function countdown() {
@@ -17,7 +17,7 @@ function countdown() {
     const hours = Math.floor(remainingSeconds / (3600 )) % 24;
     const days = Math.floor(remainingSeconds / (3600 * 24 ));
     counter.textContent = `Time remaining:
-    ${days.toString().length > 1 ? days : 0 + days.toString()
+    ${0 + days.toString()
     }-${hours.toString().length > 1 ? hours : 0 + hours.toString()
     }-${minutes.toString().length > 1 ? minutes : 0 + minutes.toString()
     }-${seconds.toString().length > 1 ? seconds : 0 + seconds.toString()}`;
@@ -25,7 +25,14 @@ function countdown() {
     counter.textContent = 'Promotion ended.';
     clearInterval(countdown);
   }
+
+  function stopCountdown() {
+    counter.textContent = 'Promotion ended';
+    clearInterval(myInterval);
+  }
+
+  (Date.now() >= endCountdownDate) ? stopCountdown() : '';
 }
 
-(Date.now() >= endCountdownDate) ? counter.textContent = 'Promotion ended' : setInterval(countdown, 1000);
+const myInterval = setInterval(countdown, 1000);
 

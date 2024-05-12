@@ -10,7 +10,10 @@ function fillWithContent(content) {
   for (let i = 0; i < 3; i++) {
     sliderContainer.insertAdjacentHTML('beforeend', `
         <div class="slider-item slide-${i+1}">
-          <picture class="img-container">
+          <picture class="img-container close">
+            <img src="/img/close-icon.svg">
+          </picture>
+          <picture class="img-container photo">
             <img src="${content[i]?.imgURL}">
           </picture>
           <h1 class="name">${content[i].name}</h1>
